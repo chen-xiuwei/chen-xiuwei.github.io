@@ -1,0 +1,63 @@
+---
+layout: default
+---
+<!--主页面中显示的信息-->
+<!--添加阅读次数等标签-->
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+<div class="wrap-post">
+<div class="post-2">
+  <div class="post-half">
+  <h3 class="post-title_con">{{ page.title }}</h3>
+  <!-- pv的方式，单个用户点击1篇文章，本篇文章记录1次阅读量 -->
+  <div class="post-date_con">
+    <i class="fa fa-calendar-times-o" aria-hidden="true"></i>
+    {{ page.date | date_to_string }}&nbsp;
+    <span id="busuanzi_container_page_pv"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp;
+      <span id="busuanzi_value_page_pv"></span>次
+    </span>
+  </div>
+  </div>
+  {{ content }}
+</div>
+
+
+<!--以下内容为近期发表博客-->
+ <!--
+{% if site.related_posts.size >= 1 %}
+<div class="related">
+  <h3>近期博文</h3>
+  <ul class="related-posts">
+    {% for post in site.related_posts limit:3 %}
+      <li>
+        <h6>
+          <a href="{{ site.baseurl }}{{ post.url }}">
+            {{ post.title }}
+            <small>{{ post.date | date_to_string }}</small>
+          </a>
+        </h6>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
+{% endif %}
+-->
+<!--以下内容为通过valine添加评论功能，详见https://blog.csdn.net/zhangquan2015/article/details/80178794-->
+
+
+   <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <div id="comment"></div>
+<script>
+    var valine = new Valine();
+    valine.init({
+        el:'#comment',
+        appId:'JyVo5Gded9qKmQkbU2FyplD7-gzGzoHsz',
+        appKey:'uJqH07W94quJlohzUXlsYTEN',
+        notify:true,
+        path: '{{ page.url }}',
+        placeholder:'在这里写评论--欢迎和我交流啊！'
+    })
+</script>
+</div>
