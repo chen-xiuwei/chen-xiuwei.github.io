@@ -5,13 +5,13 @@ description: |        #个人介绍
   <a href="https://github.com/chen-xiuwei">
     <i class="fab fa-github"></i>
   </a>
-url: https://chen-xw.github.io       #你github page的地址
+url: https://chen-xiuwei.github.io       #你github page的地址
 baseurl: ""
 
 
 
 author:
-  name: chen-xw
+  name: chen-xiuwei
   description: SYSU 21
   gravatar:  a259451310e45dc6666a057d4a3123d9            #自己的md5码
   contact:
